@@ -60,12 +60,8 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   "Pokedex",
-                  style: TextStyle(
-                    fontSize: 26.0,
-                    fontWeight: FontWeight.bold
-                  ),
+                  style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
                 ),
-
                 GridView.count(
                   shrinkWrap: true,
                   crossAxisCount: 2,
@@ -78,11 +74,27 @@ class _HomePageState extends State<HomePage> {
                         color: Color(0xff4ACFB0),
                         borderRadius: BorderRadius.circular(18.0),
                       ),
-
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            bottom: -24,
+                            right: -14,
+                            child: Image.asset(
+                              'assets/images/pokeball.png',
+                              height: 120,
+                              color: Colors.white.withOpacity(0.27),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Image.network(
+                              "http://www.serebii.net/pokemongo/pokemon/001.png",
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-
-
-
                     Container(
                       decoration: BoxDecoration(
                         color: Color(0xff4ACFB0),
@@ -95,7 +107,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),
