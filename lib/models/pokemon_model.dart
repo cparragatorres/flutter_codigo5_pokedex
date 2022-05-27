@@ -9,14 +9,14 @@ class PokemonModel {
     required this.height,
     required this.weight,
     required this.candy,
-    required this.candyCount,
+    this.candyCount,
     required this.egg,
     required this.spawnChance,
-    required this.avgSpawns,
+    //required this.avgSpawns,
     required this.spawnTime,
-    required this.multipliers,
-    required this.weaknesses,
-    required this.nextEvolution,
+    this.multipliers,
+    this.weaknesses,
+    //required this.nextEvolution,
   });
 
   int id;
@@ -27,14 +27,14 @@ class PokemonModel {
   String height;
   String weight;
   String candy;
-  int candyCount;
+  int? candyCount;
   String egg;
   double spawnChance;
-  int avgSpawns;
+  //double avgSpawns;
   String spawnTime;
-  List<double> multipliers;
-  List<String> weaknesses;
-  List<NextEvolution> nextEvolution;
+  List<double>? multipliers;
+  List<String>? weaknesses;
+  //List<NextEvolution> nextEvolution;
 
   factory PokemonModel.fromJson(Map<String, dynamic> json) => PokemonModel(
     id: json["id"],
@@ -48,11 +48,11 @@ class PokemonModel {
     candyCount: json["candy_count"],
     egg: json["egg"],
     spawnChance: json["spawn_chance"].toDouble(),
-    avgSpawns: json["avg_spawns"],
+    //avgSpawns: json["avg_spawns"],
     spawnTime: json["spawn_time"],
-    multipliers: List<double>.from(json["multipliers"].map((x) => x.toDouble())),
-    weaknesses: List<String>.from(json["weaknesses"].map((x) => x)),
-    nextEvolution: List<NextEvolution>.from(json["next_evolution"].map((x) => NextEvolution.fromJson(x))),
+    multipliers: List<double>.from((json["multipliers"] ?? []).map((x) => x.toDouble())),
+    weaknesses: List<String>.from((json["weaknesses"] ?? []).map((x) => x)),
+    //nextEvolution: List<NextEvolution>.from(json["next_evolution"].map((x) => NextEvolution.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -67,11 +67,11 @@ class PokemonModel {
     "candy_count": candyCount,
     "egg": egg,
     "spawn_chance": spawnChance,
-    "avg_spawns": avgSpawns,
+    //"avg_spawns": avgSpawns,
     "spawn_time": spawnTime,
-    "multipliers": List<dynamic>.from(multipliers.map((x) => x)),
-    "weaknesses": List<dynamic>.from(weaknesses.map((x) => x)),
-    "next_evolution": List<dynamic>.from(nextEvolution.map((x) => x.toJson())),
+    "multipliers": List<dynamic>.from((multipliers ?? []).map((x) => x)),
+    "weaknesses": List<dynamic>.from((weaknesses ?? []).map((x) => x)),
+    //"next_evolution": List<dynamic>.from(nextEvolution.map((x) => x.toJson())),
   };
 }
 

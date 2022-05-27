@@ -30,13 +30,6 @@ class ItemGridWidget extends StatelessWidget {
               color: Colors.white.withOpacity(0.27),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Image.network(
-              image,
-            ),
-          ),
           Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 20.0, horizontal: 14.0),
@@ -61,6 +54,13 @@ class ItemGridWidget extends StatelessWidget {
 
 
               ],
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Image.network(
+              image,
             ),
           ),
         ],

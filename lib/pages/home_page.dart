@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_pokedex/models/pokemon_model.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_grid_widget.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List pokemonList = [];
+  List<PokemonModel> pokemonModelList = [];
 
   @override
   initState() {
@@ -23,6 +25,8 @@ class _HomePageState extends State<HomePage> {
     http.Response response = await http.get(_uri);
     Map<String, dynamic> myMap = json.decode(response.body);
     pokemonList = myMap["pokemon"];
+    pokemonModelList = pokemonList.map((e) => PokemonModel.fromJson(e)).toList();
+    print(pokemonModelList);
     setState(() {});
     // myMap["pokemon"].forEach((mandarina){
     //   print(mandarina['name']);
