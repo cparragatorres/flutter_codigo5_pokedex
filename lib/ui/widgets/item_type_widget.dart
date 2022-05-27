@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 
 class ItemTypeWidget extends StatelessWidget {
-  const ItemTypeWidget({Key? key}) : super(key: key);
+
+  String type;
+  ItemTypeWidget({required this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class ItemTypeWidget extends StatelessWidget {
         ],
       ),
       child: Text(
-        "Grass",
+        type,
         style: TextStyle(
           color: Colors.white,
         ),

@@ -53,7 +53,12 @@ class ItemGridWidget extends StatelessWidget {
                 const SizedBox(
                   height: 4.0,
                 ),
-                ItemTypeWidget(),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: type.map<Widget>((e) => ItemTypeWidget(type: e,)).toList(),
+                ),
+
 
               ],
             ),
