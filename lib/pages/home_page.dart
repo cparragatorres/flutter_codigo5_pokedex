@@ -92,6 +92,24 @@ class _HomePageState extends State<HomePage> {
                               "http://www.serebii.net/pokemongo/pokemon/001.png",
                             ),
                           ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 14.0),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Bulbasaur",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w900
+                                  ),
+                                ),
+
+
+
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
