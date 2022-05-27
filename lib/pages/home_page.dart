@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
     Map<String, dynamic> myMap = json.decode(response.body);
     pokemonList = myMap["pokemon"];
     pokemonModelList = pokemonList.map((e) => PokemonModel.fromJson(e)).toList();
-    print(pokemonModelList);
     setState(() {});
     // myMap["pokemon"].forEach((mandarina){
     //   print(mandarina['name']);
@@ -75,12 +74,12 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
                   childAspectRatio: 1.4,
-                  children: pokemonList
+                  children: pokemonModelList
                       .map<Widget>(
                         (e) => ItemGridWidget(
-                          name: e["name"],
-                          image: e["img"],
-                          type: List<String>.from(e["type"]),
+                          name: e.name,
+                          image: e.img,
+                          type: e.type,
                         ),
                       )
                       .toList(),

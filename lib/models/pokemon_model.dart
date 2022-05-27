@@ -12,7 +12,7 @@ class PokemonModel {
     this.candyCount,
     required this.egg,
     required this.spawnChance,
-    //required this.avgSpawns,
+    required this.avgSpawns,
     required this.spawnTime,
     this.multipliers,
     this.weaknesses,
@@ -30,7 +30,7 @@ class PokemonModel {
   int? candyCount;
   String egg;
   double spawnChance;
-  //double avgSpawns;
+  double? avgSpawns;
   String spawnTime;
   List<double>? multipliers;
   List<String>? weaknesses;
@@ -48,7 +48,7 @@ class PokemonModel {
     candyCount: json["candy_count"],
     egg: json["egg"],
     spawnChance: json["spawn_chance"].toDouble(),
-    //avgSpawns: json["avg_spawns"],
+    avgSpawns: json["avg_spawns"].toDouble(),
     spawnTime: json["spawn_time"],
     multipliers: List<double>.from((json["multipliers"] ?? []).map((x) => x.toDouble())),
     weaknesses: List<String>.from((json["weaknesses"] ?? []).map((x) => x)),
@@ -67,7 +67,7 @@ class PokemonModel {
     "candy_count": candyCount,
     "egg": egg,
     "spawn_chance": spawnChance,
-    //"avg_spawns": avgSpawns,
+    "avg_spawns": avgSpawns,
     "spawn_time": spawnTime,
     "multipliers": List<dynamic>.from((multipliers ?? []).map((x) => x)),
     "weaknesses": List<dynamic>.from((weaknesses ?? []).map((x) => x)),
