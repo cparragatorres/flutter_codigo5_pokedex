@@ -93,20 +93,43 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 14.0),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 20.0, horizontal: 14.0),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   "Bulbasaur",
                                   style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.w900
+                                      color: Colors.white,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w900),
+                                ),
+                                const SizedBox(
+                                  height: 4.0,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(bottom: 6.0),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 14.0, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.27),
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.03),
+                                        blurRadius: 8,
+                                        offset: const Offset(4, 4),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Text(
+                                    "Grass",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
-
-
-
                               ],
                             ),
                           ),
