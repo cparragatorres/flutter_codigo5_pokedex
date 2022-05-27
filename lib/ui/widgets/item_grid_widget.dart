@@ -1,9 +1,15 @@
-
-
 import 'package:flutter/material.dart';
 
 class ItemGridWidget extends StatelessWidget {
-  const ItemGridWidget({Key? key}) : super(key: key);
+  String name;
+  String image;
+  List<String> type;
+
+  ItemGridWidget({
+    required this.name,
+    required this.image,
+    required this.type,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +33,17 @@ class ItemGridWidget extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: Image.network(
-              "http://www.serebii.net/pokemongo/pokemon/001.png",
+              image,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-                vertical: 20.0, horizontal: 14.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 14.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Bulbasaur",
+                  name,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 16.0,
@@ -48,8 +54,8 @@ class ItemGridWidget extends StatelessWidget {
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 6.0),
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 14.0, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 14.0, vertical: 4),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.27),
                     borderRadius: BorderRadius.circular(10),
