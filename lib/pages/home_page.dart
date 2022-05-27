@@ -42,6 +42,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("PokedexApp"),
       ),
+      body: ListView.builder(
+        itemCount: pokemonList.length,
+        itemBuilder: (BuildContext context, int index){
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(pokemonList[index]["img"]),
+            ),
+            title: Text(pokemonList[index]["name"]),
+          );
+        },
+      ),
     );
   }
 }
