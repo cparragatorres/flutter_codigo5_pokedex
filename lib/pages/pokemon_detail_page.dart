@@ -5,9 +5,10 @@ import 'package:flutter_codigo5_pokedex/ui/widgets/item_data_pokemon_widget.dart
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_type_widget.dart';
 
 class PokemonDetailPage extends StatelessWidget {
-
   PokemonModel pokemon;
-  PokemonDetailPage({required this.pokemon,});
+  PokemonDetailPage({
+    required this.pokemon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +56,11 @@ class PokemonDetailPage extends StatelessWidget {
                           ),
                         ),
                         Row(
-                          children: pokemon.type.map((e) =>  ItemTypeWidget(type: e),).toList(),
+                          children: pokemon.type
+                              .map(
+                                (e) => ItemTypeWidget(type: e),
+                              )
+                              .toList(),
                         ),
                       ],
                     ),
@@ -122,45 +127,32 @@ class PokemonDetailPage extends StatelessWidget {
                               title: "Candy",
                               data: pokemon.candy,
                             ),
-
-
                             Container(
                               margin: const EdgeInsets.symmetric(vertical: 4.0),
                               child: Row(
                                 children: [
                                   Text("Multipliers: "),
-                                  Container(
-                                    margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                                    child: Chip(
-                                      label: Text("1.43"),
-                                      elevation: 2,
-                                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                                      backgroundColor: Colors.white38,
-                                    ),
+                                  Row(
+                                    children: pokemon.multipliers!
+                                        .map(
+                                          (e) => Container(
+                                            margin: const EdgeInsets.symmetric(
+                                                horizontal: 4.0),
+                                            child: Chip(
+                                              label: Text(e.toString()),
+                                              elevation: 2,
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 10.0),
+                                              backgroundColor: Colors.white38,
+                                            ),
+                                          ),
+                                        )
+                                        .toList(),
                                   ),
-                                  Container(
-                                    margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                                    child: Chip(
-                                      label: Text("1.43"),
-                                      elevation: 2,
-                                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                                      backgroundColor: Colors.white38,
-                                    ),
-                                  ),
-                                  Container(
-                                    margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                                    child: Chip(
-                                      label: Text("1.43"),
-                                      elevation: 2,
-                                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                                      backgroundColor: Colors.white38,
-                                    ),
-                                  ),
-
                                 ],
                               ),
                             ),
-
                           ],
                         ),
                       ),
@@ -187,5 +179,3 @@ class PokemonDetailPage extends StatelessWidget {
     );
   }
 }
-
-
