@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_pokedex/ui/widgets/item_data_pokemon_widget.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_type_widget.dart';
 
 class PokemonDetailPage extends StatelessWidget {
@@ -94,41 +95,39 @@ class PokemonDetailPage extends StatelessWidget {
                         padding: const EdgeInsets.all(22.0),
                         child: Column(
                           children: [
-                            Text(
+                            const Text(
                               "About Pokemon",
                               style: TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            const SizedBox(
+                              height: 12.0,
+                            ),
+                            ItemDataPokemonWidget(),
+                            ItemDataPokemonWidget(),
+                            ItemDataPokemonWidget(),
+                            ItemDataPokemonWidget(),
+
                             Container(
                               margin: const EdgeInsets.symmetric(vertical: 4.0),
                               child: Row(
                                 children: [
-                                  Text(
-                                    "Height: ",
-                                    style: TextStyle(
-                                      color: Colors.black54,
-                                    ),
+                                  Text("Multipliers: "),
+                                  Chip(
+                                    label: Text("Hola"),
                                   ),
-                                  Text("0.71 m"),
+                                  Chip(
+                                    label: Text("Hola"),
+                                  ),
+                                  Chip(
+                                    label: Text("Hola"),
+                                  ),
                                 ],
                               ),
                             ),
-                            Container(
-                              margin: const EdgeInsets.symmetric(vertical: 4.0),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Weight: ",
-                                    style: TextStyle(
-                                      color: Colors.black54,
-                                    ),
-                                  ),
-                                  Text("0.71 m"),
-                                ],
-                              ),
-                            ),
+
                           ],
                         ),
                       ),
@@ -155,3 +154,5 @@ class PokemonDetailPage extends StatelessWidget {
     );
   }
 }
+
+
