@@ -77,12 +77,18 @@ class PokemonDetailPage extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
+                  width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
+                  ),
+                  child: Stack(
+                    children: [
+                      Image.network("http://www.serebii.net/pokemongo/pokemon/001.png")
+                    ],
                   ),
                 ),
               ),
