@@ -73,13 +73,13 @@ class _HomePageState extends State<HomePage> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
-                  childAspectRatio: 1.4,
+                  childAspectRatio: 1.35,
                   children: pokemonModelList
                       .map<Widget>(
-                        (e) => ItemGridWidget(
-                          name: e.name,
-                          image: e.img,
-                          type: e.type,
+                        (pokemon) => ItemGridWidget(
+                          name: pokemon.name,
+                          image: pokemon.img,
+                          type: pokemon.type,
                         ),
                       )
                       .toList(),

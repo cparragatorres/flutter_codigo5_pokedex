@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_pokedex/ui/general/colors.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_type_widget.dart';
 
 class ItemGridWidget extends StatelessWidget {
@@ -16,7 +17,7 @@ class ItemGridWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xff4ACFB0),
+        color: colorPokemon[type[0]],
         borderRadius: BorderRadius.circular(18.0),
       ),
       child: Stack(
