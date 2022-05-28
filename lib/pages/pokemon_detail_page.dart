@@ -24,7 +24,7 @@ class PokemonDetailPage extends StatelessWidget {
         children: [
           Positioned(
             right: -20,
-            top: MediaQuery.of(context).size.height * 0.12,
+            top: MediaQuery.of(context).size.height * 0.09,
             child: Image.asset(
               'assets/images/pokeball.png',
               width: 200,
@@ -90,6 +90,48 @@ class PokemonDetailPage extends StatelessWidget {
                   child: Stack(
                     clipBehavior: Clip.none,
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.all(22.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              "About Pokemon",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.symmetric(vertical: 4.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Height: ",
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                  Text("0.71 m"),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.symmetric(vertical: 4.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Weight: ",
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                  Text("0.71 m"),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       Positioned.fill(
                         top: -100,
                         //right: MediaQuery.of(context).size.width * 0.35,
