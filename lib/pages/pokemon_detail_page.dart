@@ -115,15 +115,34 @@ class PokemonDetailPage extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Text("Multipliers: "),
-                                  Chip(
-                                    label: Text("Hola"),
+                                  Container(
+                                    margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Chip(
+                                      label: Text("1.43"),
+                                      elevation: 2,
+                                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      backgroundColor: Colors.white38,
+                                    ),
                                   ),
-                                  Chip(
-                                    label: Text("Hola"),
+                                  Container(
+                                    margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Chip(
+                                      label: Text("1.43"),
+                                      elevation: 2,
+                                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      backgroundColor: Colors.white38,
+                                    ),
                                   ),
-                                  Chip(
-                                    label: Text("Hola"),
+                                  Container(
+                                    margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Chip(
+                                      label: Text("1.43"),
+                                      elevation: 2,
+                                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      backgroundColor: Colors.white38,
+                                    ),
                                   ),
+
                                 ],
                               ),
                             ),
