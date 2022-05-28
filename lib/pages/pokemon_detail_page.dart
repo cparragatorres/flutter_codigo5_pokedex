@@ -23,8 +23,8 @@ class PokemonDetailPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            right: -20  ,
-            top: MediaQuery.of(context).size.height * 0.2,
+            right: -20,
+            top: MediaQuery.of(context).size.height * 0.12,
             child: Image.asset(
               'assets/images/pokeball.png',
               width: 200,
@@ -73,9 +73,11 @@ class PokemonDetailPage extends StatelessWidget {
           Column(
             children: [
               Expanded(
+                flex: 4,
                 child: SizedBox(),
               ),
               Expanded(
+                flex: 9,
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -86,8 +88,20 @@ class PokemonDetailPage extends StatelessWidget {
                     ),
                   ),
                   child: Stack(
+                    clipBehavior: Clip.none,
                     children: [
-                      Image.network("http://www.serebii.net/pokemongo/pokemon/001.png")
+                      Positioned.fill(
+                        top: -100,
+                        //right: MediaQuery.of(context).size.width * 0.35,
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Image.network(
+                            "http://www.serebii.net/pokemongo/pokemon/001.png",
+                            height: 140.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
