@@ -8,4 +8,5 @@ import 'dart:ui';
   "Fire": Color(0xffFB6C6C),
   "Water": Color(0xff76BCFD),
   "Electric": Color(0xffFFD86F),
+
 };
