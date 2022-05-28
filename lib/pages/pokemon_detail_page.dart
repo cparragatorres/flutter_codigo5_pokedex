@@ -22,6 +22,15 @@ class PokemonDetailPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
+          Positioned(
+            right: -20  ,
+            top: MediaQuery.of(context).size.height * 0.2,
+            child: Image.asset(
+              'assets/images/pokeball.png',
+              width: 200,
+              color: Colors.white.withOpacity(0.26),
+            ),
+          ),
           Column(
             children: [
               Padding(
