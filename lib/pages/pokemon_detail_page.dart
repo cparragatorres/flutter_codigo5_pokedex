@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_pokedex/ui/widgets/item_type_widget.dart';
 
 class PokemonDetailPage extends StatelessWidget {
   const PokemonDetailPage({Key? key}) : super(key: key);
@@ -23,11 +24,41 @@ class PokemonDetailPage extends StatelessWidget {
         children: [
           Column(
             children: [
-              Text("Hola"),
-              Text("Hola"),
-              Text("Hola"),
-              Text("Hola"),
-              Text("Hola"),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Bulbasaur",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            ItemTypeWidget(type: "Grass"),
+                            ItemTypeWidget(type: "Grass"),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "#001",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
           Column(
