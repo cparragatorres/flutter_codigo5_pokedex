@@ -1,10 +1,13 @@
-
 import 'package:flutter/material.dart';
 
 class ItemDataPokemonWidget extends StatelessWidget {
-  const ItemDataPokemonWidget({
-    Key? key,
-  }) : super(key: key);
+  String title;
+  String data;
+
+  ItemDataPokemonWidget({
+    required this.title,
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +16,12 @@ class ItemDataPokemonWidget extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "Height: ",
+            "$title: ",
             style: TextStyle(
               color: Colors.black54,
             ),
           ),
-          Text("0.71 m"),
+          Text(data),
         ],
       ),
     );

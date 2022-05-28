@@ -106,10 +106,23 @@ class PokemonDetailPage extends StatelessWidget {
                             const SizedBox(
                               height: 12.0,
                             ),
-                            ItemDataPokemonWidget(),
-                            ItemDataPokemonWidget(),
-                            ItemDataPokemonWidget(),
-                            ItemDataPokemonWidget(),
+                            ItemDataPokemonWidget(
+                              title: "Height",
+                              data: pokemon.height,
+                            ),
+                            ItemDataPokemonWidget(
+                              title: "Weight",
+                              data: pokemon.weight,
+                            ),
+                            ItemDataPokemonWidget(
+                              title: "Egg",
+                              data: pokemon.egg,
+                            ),
+                            ItemDataPokemonWidget(
+                              title: "Candy",
+                              data: pokemon.candy,
+                            ),
+
 
                             Container(
                               margin: const EdgeInsets.symmetric(vertical: 4.0),
