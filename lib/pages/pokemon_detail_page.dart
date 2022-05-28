@@ -153,6 +153,38 @@ class PokemonDetailPage extends StatelessWidget {
                                 ],
                               ),
                             ),
+                            Container(
+                              margin: const EdgeInsets.symmetric(vertical: 4.0),
+                              child: Row(
+                                children: [
+                                  Text("Weaknesses: "),
+                                  Expanded(
+                                    child: SingleChildScrollView(
+                                      physics: BouncingScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        children: pokemon.weaknesses!
+                                            .map(
+                                              (e) => Container(
+                                            margin: const EdgeInsets.symmetric(
+                                                horizontal: 4.0),
+                                            child: Chip(
+                                              label: Text(e),
+                                              elevation: 2,
+                                              padding:
+                                              const EdgeInsets.symmetric(
+                                                  horizontal: 10.0),
+                                              backgroundColor: Colors.white38,
+                                            ),
+                                          ),
+                                        )
+                                            .toList(),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
