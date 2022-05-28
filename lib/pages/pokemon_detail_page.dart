@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_pokedex/models/pokemon_model.dart';
+import 'package:flutter_codigo5_pokedex/ui/general/colors.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_data_pokemon_widget.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_type_widget.dart';
 
@@ -11,9 +12,9 @@ class PokemonDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff48D0B0),
+      backgroundColor: colorPokemon[pokemon.type[0]],
       appBar: AppBar(
-        backgroundColor: Color(0xff48D0B0),
+        backgroundColor: colorPokemon[pokemon.type[0]],
         elevation: 0,
         actions: [
           IconButton(
@@ -54,10 +55,7 @@ class PokemonDetailPage extends StatelessWidget {
                           ),
                         ),
                         Row(
-                          children: [
-                            ItemTypeWidget(type: "Grass"),
-                            ItemTypeWidget(type: "Grass"),
-                          ],
+                          children: pokemon.type.map((e) =>  ItemTypeWidget(type: e),).toList(),
                         ),
                       ],
                     ),
