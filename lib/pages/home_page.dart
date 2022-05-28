@@ -62,10 +62,17 @@ class _HomePageState extends State<HomePage> {
           child: Padding(
             padding: const EdgeInsets.all(12),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(
+                  height: 10.0,
+                ),
                 Text(
                   "Pokedex",
                   style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 30.0,
                 ),
                 GridView.count(
                   physics: const ScrollPhysics(),
