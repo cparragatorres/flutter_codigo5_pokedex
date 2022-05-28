@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_pokedex/models/pokemon_model.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_data_pokemon_widget.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_type_widget.dart';
 
 class PokemonDetailPage extends StatelessWidget {
-  const PokemonDetailPage({Key? key}) : super(key: key);
+
+  PokemonModel pokemon;
+  PokemonDetailPage({required this.pokemon,});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +46,7 @@ class PokemonDetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Bulbasaur",
+                          pokemon.name,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 36.0,
@@ -59,7 +62,7 @@ class PokemonDetailPage extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      "#001",
+                      "#${pokemon.num}",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.0,
@@ -151,12 +154,12 @@ class PokemonDetailPage extends StatelessWidget {
                         ),
                       ),
                       Positioned.fill(
-                        top: -100,
+                        top: -110,
                         //right: MediaQuery.of(context).size.width * 0.35,
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.network(
-                            "http://www.serebii.net/pokemongo/pokemon/001.png",
+                            pokemon.img,
                             height: 140.0,
                             fit: BoxFit.cover,
                           ),

@@ -1,28 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_pokedex/models/pokemon_model.dart';
 import 'package:flutter_codigo5_pokedex/pages/pokemon_detail_page.dart';
 import 'package:flutter_codigo5_pokedex/ui/general/colors.dart';
 import 'package:flutter_codigo5_pokedex/ui/widgets/item_type_widget.dart';
 
 class ItemGridWidget extends StatelessWidget {
-  String name;
-  String image;
-  List<String> type;
+  // String name;
+  // String image;
+  // List<String> type;
+
+  PokemonModel pokemon;
 
   ItemGridWidget({
-    required this.name,
-    required this.image,
-    required this.type,
+    // required this.name,
+    // required this.image,
+    // required this.type,
+    required this.pokemon,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> PokemonDetailPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> PokemonDetailPage(pokemon: pokemon,)));
       },
       child: Container(
         decoration: BoxDecoration(
-          color: colorPokemon[type[0]],
+          color: colorPokemon[pokemon.type[0]],
           borderRadius: BorderRadius.circular(18.0),
         ),
         child: Stack(
@@ -43,7 +47,7 @@ class ItemGridWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    pokemon.name,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 16.0,
@@ -55,7 +59,7 @@ class ItemGridWidget extends StatelessWidget {
 
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: type.map<Widget>((e) => ItemTypeWidget(type: e,)).toList(),
+                    children: pokemon.type.map<Widget>((e) => ItemTypeWidget(type: e,)).toList(),
                   ),
 
 
@@ -66,7 +70,7 @@ class ItemGridWidget extends StatelessWidget {
               bottom: 0,
               right: 0,
               child: Image.network(
-                image,
+                pokemon.img,
               ),
             ),
           ],
