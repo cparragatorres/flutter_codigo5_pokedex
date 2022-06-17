@@ -1,6 +1,10 @@
 # flutter_codigo5_pokedex
 
-A new Flutter project.
+Pokedex
+
+# Images
+
+<img src="Screenshot_20220617_003517.png" width="300"> <img src="Screenshot_20220617_003525.png" width="300">
 
 ## Getting Started
 
