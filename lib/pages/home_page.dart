@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -13,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   List pokemonList = [];
 
   @override
-  initState(){
+  initState() {
     super.initState();
     getData();
   }
@@ -27,9 +26,6 @@ class _HomePageState extends State<HomePage> {
     // print(response.body); //body es un getter que retorna un String
     Map<String, dynamic> myMap = json.decode(response.body);
     pokemonList = myMap["pokemon"];
-    pokemonList.forEach((element) {
-      print(element["name"]);
-    });
   }
 
   @override
@@ -37,6 +33,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Pokedex"),
+      ),
+      body: ListView.builder(
+        itemCount: pokemonList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(pokemonList[index]["img"]),
+            ),
+            title: Text(pokemonList[index]["name"]),
+          );
+        },
       ),
     );
   }
